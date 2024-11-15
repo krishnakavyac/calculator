@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        /* Full-screen background with gradient */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        /* Style calculator container */
+        .calculator-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+            max-width: 320px;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Title styling */
+        h1 {
+            font-size: 28px;
+            color: #444;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Input and label styling */
+        label {
+            font-size: 14px;
+            color: #333;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        /* Submit button styling */
+        input[type="submit"] {
+            background-color: #667eea;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Hover and click effects for button */
+        input[type="submit"]:hover {
+            background-color: #4e5bb7;
+        }
+
+        input[type="submit"]:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Calculator</h1>
+        <form method="post" action="res/">
+            {% csrf_token %}
+
+            <input type="text" id="num1" name="num1" placeholder="NUMBER1" required>
+
+            
+            <input type="text" id="num2" name="num2" placeholder="NUMBER2" required>
+
+            <input type="submit" value="Calculate">
+        </form>
+    </div>
+</body>
+</html>
